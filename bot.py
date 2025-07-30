@@ -10,7 +10,7 @@ import logging
 import random
 
 # ✅ إعدادات البوت
-TOKEN = 'API:7815578930:AAHpu5e-bjGTRcve80JQ5fbdGKexQRhQsz8'
+TOKEN = '7815578930:AAHpu5e-bjGTRcve80JQ5fbdGKexQRhQsz8'
 ADMIN_ID = 1049380446
 BOT_USERNAME = "@Assiut61framebot"
 

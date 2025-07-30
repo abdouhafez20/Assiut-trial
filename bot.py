@@ -10,9 +10,7 @@ import logging
 import random
 
 # ✅ إعدادات البوت
-TOKEN = '
-          7815578930:AAHpu5e-bjGTRcve80JQ5fbdGKexQRhQsz8
-        '
+TOKEN = '7815578930:AAHpu5e-bjGTRcve80JQ5fbdGKexQRhQsz8'
 ADMIN_ID = 1049380446
 BOT_USERNAME = "@Assiut61framebot"
 
@@ -237,7 +235,8 @@ def main():
     app.job_queue.run_daily(send_daily_report, time=time(hour=0, minute=0))
     app.post_init = setup_bot
 
-    app.run_polling()
+    # ✅ حذف أي ويب هوك سابق لتفادي الـ conflict
+    import asyncio
+    asyncio.run(app.bot.delete_webhook(drop_pending_updates=True))
 
-if __name__ == "__main__":
-    main()
+    app.run_polling()

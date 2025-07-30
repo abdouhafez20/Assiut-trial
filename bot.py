@@ -9,6 +9,8 @@ from datetime import time
 import logging
 import random
 
+from keep_alive import keep_alive  # ✅ السيرفر الصغير لتشغيل Replit بدون توقف
+
 # ✅ إعدادات البوت
 TOKEN = '7815578930:AAHpu5e-bjGTRcve80JQ5fbdGKexQRhQsz8'
 ADMIN_ID = 1049380446
@@ -222,6 +224,8 @@ async def setup_bot(app):
 
 # ✅ Main
 def main():
+    keep_alive()  # ✅ تشغيل السيرفر البسيط لمنع النوم على Replit
+
     app = ApplicationBuilder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
